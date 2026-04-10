@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;      
+}
+
+.logoLogin {
+    height: 200px;
+    width: auto;
+}
+
+/* estilos para pagina acciones.html */
+.jumbotron {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
+}
+
+.logo {
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.list-group-item-action {
+    color: #555;
+   
+}
+
+.list-group-item-action:hover {
+    transform: scale(1.02);
+    background-color: #f8f9fa;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+  
+}
+
+.list-group-item-action.depositar {
+    background-color: #2196F3;
+    color: white;
+}
+
+.list-group-item-action.retirar {
+    background-color: #2196F3;
+    color: white;
+}
+
+.list-group-item-action.consultar {
+    background-color: #2196F3;
+    color: white;
+}
+
+.list-group-item-action.pagar {
+    background-color: #2196F3;
+    color: white;
+}
+
+.list-group-item-action.salir {
+    background-color: #8a8888;
+    color: white;
+}

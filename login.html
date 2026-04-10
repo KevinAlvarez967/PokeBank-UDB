@@ -26,6 +26,56 @@
     />
 </head>
 <body>
-    
+    <!--Cuadro para formulario de Ingreso-->
+    <div class="Whole">
+      <div class="login">
+        <!--Formulario para Ingreso-->
+        <form id="loginForm">
+          <div class="logo">
+            <img src="./img/Pokemon-Logo.png" alt="Logo-Pokemon" />
+          </div>
+          <div class="titulos">
+            <h1>¡Bienvenido!</h1>
+            <h2>Iniciar Sesión</h2>
+          </div>
+          <!--Ingreso de Usuario y Contraseña-->
+          
+            <div class="input-box" id="usuario-box">
+              <input
+                type="text"
+                id="usuarioInput"
+                placeholder="Usuario"
+                autocomplete="off"
+              />
+            </div>
+            <div class="input-box" id="password-box">
+              <input
+                type="password"
+                id="passwordInput"
+                placeholder="Contraseña"
+                autocomplete="off"
+              />
+            </div>
+          
+          
+
+          <p id="errorMessage" style="color: red"></p>
+          <p id="errorMessageUsuario" style="color: red"></p>
+          <!--Botones para ingresar y registrar-->
+          <div class="btn-group">
+            <button type="button" class="btn btn-inicio" id="loginButton">
+              Iniciar Sesión
+            </button>
+            <button type="button" class="btn btn-registro" id="registerButton">
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--Acciones Internas JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>
