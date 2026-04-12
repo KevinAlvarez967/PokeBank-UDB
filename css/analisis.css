@@ -1,0 +1,161 @@
+:root {
+    --azul: #a7bed3;
+    --celeste: #c6e2e9;
+    --verde: #f1ffc4;
+    --durazno: #ffcaaf;
+    --beige: #dab894;
+
+    --texto: #2f2f2f;
+    --blanco: rgba(255, 255, 255, 0.75);
+    --sombra: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+body {
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.caja {
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    width: 95%;
+    max-width: 1200px;
+    background-color: var(--blanco);
+    backdrop-filter: blur(4px);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header img {
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin-top: 10px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-aside {
+    width: 230px;
+    margin-right: 30px;
+}
+
+.menu-aside .nav {
+    flex-direction: column;
+}
+
+/* Botones estructura*/
+.tabs-custom .nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--texto);
+    transition: all 0.25s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.tabs-custom .nav-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.98);
+    color: var(--texto);
+}
+
+.tabs-custom .nav-link.active {
+    color: var(--texto) !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    transform: scale(1.02);
+}
+/* Botones estructura*/
+
+
+/* Botones Colores mejorados*/
+.semanal-btn {
+    background-color: var(--azul);
+}
+
+.mensual-btn {
+    background-color: var(--celeste);
+}
+
+.anual-btn {
+    background-color: var(--verde);
+}
+/* Botones Colores mejorados*/
+
+
+
+.content {
+    flex: 1;
+    max-height: 90000px;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+
+/* Botones Inferiores mejorados*/
+.btn-group-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--texto);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: all 0.25s ease;
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: var(--texto);
+    filter: brightness(0.98);
+}
+
+.cerrar-btn {
+    background-color: var(--durazno);
+}
+
+.transacciones-btn {
+    background-color: var(--beige);
+}
+
+.historial-btn {
+    background-color: var(--azul);
+}
+
+/* Botones Inferiores mejorados*/

@@ -25,13 +25,13 @@ body {
 
 /* Configurar la caja del contenido principal*/
 .login {
-  width: 100%;
-  max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  margin-top: -150px; /* Mover la caja un poco hacia arriba */
-  padding-bottom: 50px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    width: 95%;
+    max-width: 1200px;
+    background-color: var(--blanco);
+    backdrop-filter: blur(4px);
 }
 
 /* Configuracion del logo */

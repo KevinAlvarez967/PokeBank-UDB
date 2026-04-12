@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Pokémon - Historial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/analisis.css">
+</head>
+<body>
+    <div class="container">
+        <div class="caja">
+            <!-- Encabezado -->
+            <div class="header">
+                <img src="./img/Pokemon-Logo.png" alt="Logo Banco Pokémon">
+                <h1>Bienvenido, Usuario</h1>
+                <p>Número de cuenta: #</p>
+            </div>
+
+            <!-- Menu y contenido -->
+            <div class="menu">
+                <div class="menu-aside">
+                    <!-- Menu de pestañas vertical -->
+                    <ul class="nav nav-pills nav-fill flex-column tabs-custom" id="pills-tab" role="tablist">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active tab-btn semanal-btn" id="pills-semanal-tab" data-toggle="pill" href="#pills-semanal" role="tab" aria-controls="pills-semanal" aria-selected="true">Semanal</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link tab-btn mensual-btn" id="pills-mensual-tab" data-toggle="pill" href="#pills-mensual" role="tab" aria-controls="pills-mensual" aria-selected="false">Mensual</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link tab-btn anual-btn" id="pills-anual-tab" data-toggle="pill" href="#pills-anual" role="tab" aria-controls="pills-anual" aria-selected="false">Anual</a>
+                        </li>
+                    </ul>
+                    <!-- Botones adicionales -->
+                    <div class="btn-group-custom mt-4">
+                        <a href="login.html" class="btn menu-btn cerrar-btn">Cerrar Sesión</a>
+                        <a href="transacciones.html" class="btn menu-btn transacciones-btn">Transacciones</a>
+                        <a href="historial.html" class="btn menu-btn historial-btn">Historial</a>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <!-- Contenido de las pestañas -->
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-semanal" role="tabpanel" aria-labelledby="pills-semanal-tab">
+                            <h4>Gráfico Semanal</h4>
+                            <canvas id="grafico-semanal"></canvas>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="pills-mensual" role="tabpanel" aria-labelledby="pills-mensual-tab">
+                            <h4>Gráfico Mensual</h4>
+                            <canvas id="grafico-mensual"></canvas>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="pills-anual" role="tabpanel" aria-labelledby="pills-anual-tab">
+                            <h4>Gráfico Anual</h4>
+                            <canvas id="grafico-anual"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
