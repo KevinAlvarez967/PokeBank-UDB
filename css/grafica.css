@@ -76,35 +76,23 @@ body {
     flex-shrink: 0;
 }
 
-.tabs-custom .nav-link {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 13px 18px;
-    border-radius: 14px;
+.info-card {
+    background: rgba(255, 255, 255, 0.70);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.info-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
     font-weight: 700;
-    font-size: 16px;
-    color: var(--texto);
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: 0.25s ease;
 }
 
-.tabs-custom .nav-link:hover {
-    transform: translateY(-2px);
-    color: var(--texto);
-    filter: brightness(0.98);
+.info-card p {
+    margin: 0;
+    color: #555;
 }
-
-.tabs-custom .nav-link.active {
-    color: var(--texto) !important;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.13);
-    transform: scale(1.02);
-}
-
-.semanal-btn { background-color: var(--azul); }
-.mensual-btn { background-color: var(--celeste); }
-.anual-btn { background-color: var(--verde); }
 
 .btn-group-custom {
     display: flex;
@@ -134,7 +122,7 @@ body {
 
 .transacciones-btn { background-color: var(--beige); }
 .historial-btn { background-color: var(--azul); }
-.grafica-btn { background-color: var(--celeste); }
+.analisis-btn { background-color: var(--verde); }
 .cerrar-btn { background-color: var(--durazno); }
 
 .content {
@@ -177,7 +165,7 @@ body {
 canvas {
     width: 100% !important;
     max-width: 100%;
-    height: 380px !important;
+    height: 400px !important;
 }
 
 @media (max-width: 991px) {

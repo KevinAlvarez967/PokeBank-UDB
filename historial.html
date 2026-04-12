@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Pokémon - Historial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/historial.css">
+</head>
+<body>
+    <div class="container">
+        <div class="caja">
+            <div class="header">
+                <img src="./img/Pokemon-Logo.png" alt="Logo Banco Pokémon">
+                <h1>Bienvenido, <span id="nombreUsuario"></span></h1>
+                <p>Número de cuenta: <span id="cuentaUsuario"></span></p>
+            </div>
+
+            <div class="menu">
+                <div class="menu-aside">
+                    <ul class="nav nav-pills nav-fill flex-column tabs-custom" id="pills-tab" role="tablist">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active tab-btn semanal-btn" id="pills-depositos-tab" data-toggle="pill" href="#pills-depositos" role="tab" aria-controls="pills-depositos" aria-selected="true">Depósitos</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link tab-btn mensual-btn" id="pills-retiros-tab" data-toggle="pill" href="#pills-retiros" role="tab" aria-controls="pills-retiros" aria-selected="false">Retiros</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link tab-btn anual-btn" id="pills-pagos-tab" data-toggle="pill" href="#pills-pagos" role="tab" aria-controls="pills-pagos" aria-selected="false">Pagos</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link tab-btn informe-btn" id="pills-informe-tab" data-toggle="pill" href="#pills-informe" role="tab" aria-controls="pills-informe" aria-selected="false">Informe Mensual</a>
+                        </li>
+                    </ul>
+
+                    <div class="btn-group-custom mt-4">
+                        <a href="login.html" class="btn menu-btn cerrar-btn">Cerrar Sesión</a>
+                        <a href="transacciones.html" class="btn menu-btn transacciones-btn">Transacciones</a>
+                        <a href="analisis.html" class="btn menu-btn historial-btn">Análisis</a>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="panel-principal">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-depositos" role="tabpanel" aria-labelledby="pills-depositos-tab">
+                                <h4 class="seccion-titulo">Historial de Depósitos</h4>
+                                <div class="table-card">
+                                    <div class="table-container">
+                                        <table class="table tabla-estilizada" id="tabla-depositos">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Cuenta Destino</th>
+                                                    <th>Descripción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>                                
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="tab-pane fade" id="pills-retiros" role="tabpanel" aria-labelledby="pills-retiros-tab">
+                                <h4 class="seccion-titulo">Historial de Retiros</h4>
+                                <div class="table-card">
+                                    <div class="table-container">
+                                        <table class="table tabla-estilizada" id="tabla-retiros">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Monto</th>
+                                                    <th>Motivo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="tab-pane fade" id="pills-pagos" role="tabpanel" aria-labelledby="pills-pagos-tab">
+                                <h4 class="seccion-titulo">Historial de Pagos</h4>
+                                <div class="table-card">
+                                    <div class="table-container">
+                                        <table class="table tabla-estilizada" id="tabla-pagos">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Servicio</th>
+                                                    <th>Monto</th>
+                                                    <th>Número de Cuenta</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="tab-pane fade" id="pills-informe" role="tabpanel" aria-labelledby="pills-informe-tab">
+                                <h4 class="seccion-titulo">Informe Mensual</h4>
+                                <p class="subtitulo">Seleccione un mes para generar el informe mensual.</p>
+                                <div class="table-card">
+                                    <div class="table-container">
+                                        <table class="table tabla-estilizada" id="tabla-informe">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Tipo</th>
+                                                    <th>Monto</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="message">Seleccione una opción para iniciar</div>
+                        </div>
+
+                        <div class="pdf-container">
+                            <button id="pdfout" class="btn pdf-btn">Crear PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
