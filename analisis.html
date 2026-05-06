@@ -1,79 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banco Pokémon - Análisis</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/analisis.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/analisis.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
     <div class="container pagina-wrapper">
-        <div class="caja">
-            <div class="header">
-                <img src="./img/Pokemon-Logo.png" alt="Logo Banco Pokémon">
-                <h1>Bienvenido, <span id="nombreUsuario">Glesi Galdamez</span></h1>
-                <p>Número de cuenta: <span id="cuentaUsuario">1234-5678-9101</span></p>
-            </div>
+      <div class="caja">
+        <nav class="top-navbar" aria-label="Navegación principal">
+          <p class="top-navbar-title">Navegación</p>
 
-            <div class="menu">
-                <aside class="menu-aside">
-                    <ul class="nav nav-pills nav-fill flex-column tabs-custom" id="pills-tab" role="tablist">
-                        <li class="nav-item mb-2">
-                            <a class="nav-link active tab-btn semanal-btn" id="pills-semanal-tab" data-toggle="pill" href="#pills-semanal" role="tab" aria-controls="pills-semanal" aria-selected="true">Semanal</a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a class="nav-link tab-btn mensual-btn" id="pills-mensual-tab" data-toggle="pill" href="#pills-mensual" role="tab" aria-controls="pills-mensual" aria-selected="false">Mensual</a>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <a class="nav-link tab-btn anual-btn" id="pills-anual-tab" data-toggle="pill" href="#pills-anual" role="tab" aria-controls="pills-anual" aria-selected="false">Anual</a>
-                        </li>
-                    </ul>
+          <div class="top-navbar-links">
+            <a
+              href="transacciones.html"
+              class="btn navbar-btn nav-transacciones"
+              >Transacciones</a
+            >
+            <a href="historial.html" class="btn navbar-btn nav-historial"
+              >Historial</a
+            >
+            <a
+              href="analisis.html"
+              class="btn navbar-btn nav-analisis active-page"
+              >Análisis</a
+            >
+            <a href="grafica.html" class="btn navbar-btn nav-grafica"
+              >Gráfica</a
+            >
+            <a href="login.html" class="btn navbar-btn nav-cerrar"
+              >Cerrar Sesión</a
+            >
+          </div>
+        </nav>
 
-                    <div class="btn-group-custom mt-4">
-                        <a href="transacciones.html" class="btn menu-btn transacciones-btn">Transacciones</a>
-                        <a href="historial.html" class="btn menu-btn historial-btn">Historial</a>
-                        <a href="grafica.html" class="btn menu-btn grafica-btn">Gráfica</a>
-                        <a href="login.html" class="btn menu-btn cerrar-btn">Cerrar Sesión</a>
-                    </div>
-                </aside>
-
-                <main class="content">
-                    <div class="panel-principal">
-                        <h2>Análisis de movimientos</h2>
-                        <p class="subtitulo">Consulta visualmente tus depósitos, retiros y pagos por período.</p>
-
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-semanal" role="tabpanel" aria-labelledby="pills-semanal-tab">
-                                <div class="chart-card">
-                                    <h4>Gráfico semanal</h4>
-                                    <canvas id="grafico-semanal"></canvas>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="pills-mensual" role="tabpanel" aria-labelledby="pills-mensual-tab">
-                                <div class="chart-card">
-                                    <h4>Gráfico mensual</h4>
-                                    <canvas id="grafico-mensual"></canvas>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="pills-anual" role="tabpanel" aria-labelledby="pills-anual-tab">
-                                <div class="chart-card">
-                                    <h4>Gráfico anual</h4>
-                                    <canvas id="grafico-anual"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
+        <div class="header">
+          <img src="./img/Pokemon-Logo.png" alt="Logo Banco Pokémon" />
+          <h1>Bienvenido, <span id="nombreUsuario">Glesi Galdamez</span></h1>
+          <p>
+            Número de cuenta: <span id="cuentaUsuario">1234-5678-9101</span>
+          </p>
         </div>
+
+        <div class="menu">
+          <aside class="menu-aside">
+            <div class="menu-section view-buttons">
+              <p class="menu-label">Opciones de la página</p>
+
+              <ul
+                class="nav nav-pills nav-fill flex-column tabs-custom"
+                id="pills-tab"
+                role="tablist"
+              >
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link active tab-btn semanal-btn"
+                    id="pills-semanal-tab"
+                    data-toggle="pill"
+                    href="#pills-semanal"
+                    role="tab"
+                    aria-controls="pills-semanal"
+                    aria-selected="true"
+                    >Semanal</a
+                  >
+                </li>
+
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link tab-btn mensual-btn"
+                    id="pills-mensual-tab"
+                    data-toggle="pill"
+                    href="#pills-mensual"
+                    role="tab"
+                    aria-controls="pills-mensual"
+                    aria-selected="false"
+                    >Mensual</a
+                  >
+                </li>
+
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link tab-btn anual-btn"
+                    id="pills-anual-tab"
+                    data-toggle="pill"
+                    href="#pills-anual"
+                    role="tab"
+                    aria-controls="pills-anual"
+                    aria-selected="false"
+                    >Anual</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <main class="content">
+            <div class="panel-principal">
+              <h2>Análisis de movimientos</h2>
+              <p class="subtitulo">
+                Consulta visualmente tus depósitos, retiros y pagos por período.
+              </p>
+
+              <div class="tab-content" id="pills-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="pills-semanal"
+                  role="tabpanel"
+                  aria-labelledby="pills-semanal-tab"
+                >
+                  <div class="chart-card">
+                    <h4>Gráfico semanal</h4>
+                    <canvas id="grafico-semanal"></canvas>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="pills-mensual"
+                  role="tabpanel"
+                  aria-labelledby="pills-mensual-tab"
+                >
+                  <div class="chart-card">
+                    <h4>Gráfico mensual</h4>
+                    <canvas id="grafico-mensual"></canvas>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="pills-anual"
+                  role="tabpanel"
+                  aria-labelledby="pills-anual-tab"
+                >
+                  <div class="chart-card">
+                    <h4>Gráfico anual</h4>
+                    <canvas id="grafico-anual"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</body>
+  </body>
 </html>
