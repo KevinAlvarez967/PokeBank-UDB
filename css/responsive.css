@@ -1,0 +1,929 @@
+:root {
+  --azul: #a7bed3;
+  --celeste: #c6e2e9;
+  --verde: #f1ffc4;
+  --durazno: #ffcaaf;
+  --beige: #dab894;
+  --texto: #2f2f2f;
+  --blanco: rgba(255, 255, 255, 0.82);
+  --blanco-fuerte: rgba(255, 255, 255, 0.94);
+  --panel: rgba(255, 255, 255, 0.66);
+  --sombra: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--texto);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+.btn,
+.nav-link {
+  max-width: 100%;
+}
+
+button,
+.btn,
+.nav-link {
+  touch-action: manipulation;
+}
+
+/* Contenedores principales de todas las páginas */
+.container,
+.pagina-wrapper,
+.Whole {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: clamp(14px, 3vw, 28px) !important;
+  margin: 0 auto !important;
+}
+
+/* Caja principal: transacciones, historial, análisis, gráfica, registro y login */
+.caja,
+.login {
+  width: min(100%, 1250px) !important;
+  max-width: 1250px !important;
+  margin: 0 auto !important;
+  padding: clamp(20px, 4vw, 50px) !important;
+  border-radius: clamp(16px, 3vw, 22px) !important;
+  background-color: var(--blanco) !important;
+  box-shadow: var(--sombra) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Login más compacto para que no se vea excesivamente ancho */
+.Whole .login {
+  max-width: 720px !important;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(18px, 3vw, 28px) !important;
+}
+
+.header img,
+.logo img {
+  width: clamp(190px, 32vw, 340px) !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.header h1,
+.titulos h1 {
+  font-size: clamp(1.45rem, 2.6vw, 2rem) !important;
+  line-height: 1.2;
+}
+
+.header p,
+.titulos h2 {
+  font-size: clamp(0.95rem, 1.8vw, 1.12rem) !important;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Layout interno común */
+.menu {
+  width: 100%;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: clamp(16px, 3vw, 30px) !important;
+}
+
+.menu-aside {
+  width: 240px !important;
+  flex: 0 0 240px !important;
+}
+
+.content {
+  flex: 1 1 auto !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.panel-principal,
+.info-card,
+.chart-card,
+.table-card,
+.formulario-card,
+.consulta-card {
+  border-radius: clamp(14px, 2vw, 20px) !important;
+}
+
+.panel-principal {
+  width: 100%;
+  padding: clamp(18px, 2.6vw, 26px) !important;
+}
+
+.panel-principal h2,
+.seccion-titulo {
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem) !important;
+  line-height: 1.25;
+}
+
+.subtitulo {
+  font-size: clamp(0.95rem, 1.6vw, 1rem);
+}
+
+.tabs-custom,
+.btn-group-custom {
+  width: 100%;
+}
+
+.tabs-custom .nav-link,
+.menu-btn {
+  min-height: 46px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+/* Gráficas */
+.chart-card {
+  width: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100% !important;
+  height: clamp(280px, 42vw, 400px) !important;
+}
+
+/* Formularios */
+.formulario {
+  width: 100%;
+  max-width: 720px;
+  margin: 20px auto 0 !important;
+}
+
+.formulario form,
+#loginForm {
+  width: 100%;
+}
+
+.input-box {
+  width: 100%;
+  height: auto !important;
+  margin: 18px 0 !important;
+}
+
+.input-box input,
+.formulario input[type="text"],
+.formulario input[type="password"],
+.formulario input[type="email"],
+.formulario-card .form-control {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 46px;
+  height: auto !important;
+  margin: 8px auto 14px !important;
+  padding: 10px 16px !important;
+  font-size: 16px !important;
+}
+
+textarea.form-control {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.login .btn-group,
+.formulario .btn-group {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px !important;
+}
+
+.login .btn,
+.formulario .btn {
+  width: 100% !important;
+  min-height: 44px;
+  height: auto !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px !important;
+  line-height: 1.2;
+}
+
+.accion-btn,
+.pdf-btn {
+  min-height: 44px;
+  padding: 10px 18px !important;
+}
+
+/* Tablas: en escritorio y tablet se mantiene scroll horizontal controlado */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-estilizada {
+  width: 100%;
+  min-width: 680px;
+}
+
+.tabla-estilizada th,
+.tabla-estilizada td {
+  vertical-align: middle !important;
+  white-space: normal;
+}
+
+/* Tablet: todas las páginas pasan al mismo comportamiento */
+@media (max-width: 992px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .container,
+  .pagina-wrapper,
+  .Whole {
+    align-items: flex-start !important;
+  }
+
+  .caja {
+    width: 100% !important;
+    max-width: 900px !important;
+  }
+
+  .menu {
+    flex-direction: column !important;
+  }
+
+  .menu-aside {
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .content {
+    width: 100% !important;
+  }
+
+  .tabs-custom,
+  .btn-group-custom {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .tabs-custom.flex-column {
+    flex-direction: initial !important;
+  }
+
+  .tabs-custom .nav-item {
+    width: 100%;
+    margin-bottom: 0 !important;
+  }
+
+  .tabs-custom .nav-link,
+  .menu-btn {
+    width: 100% !important;
+    height: 100%;
+    padding: 12px 10px !important;
+  }
+
+  .info-card {
+    margin-bottom: 14px !important;
+  }
+}
+
+/* Móvil */
+@media (max-width: 576px) {
+  .container,
+  .pagina-wrapper,
+  .Whole {
+    padding: 12px !important;
+  }
+
+  .caja,
+  .login {
+    padding: 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .header {
+    margin-bottom: 16px !important;
+  }
+
+  .header img,
+  .logo img {
+    width: clamp(170px, 74vw, 250px) !important;
+  }
+
+  .header h1,
+  .titulos h1 {
+    font-size: 1.35rem !important;
+    padding: 0 !important;
+  }
+
+  .header p,
+  .titulos h2 {
+    font-size: 0.95rem !important;
+    padding: 0 !important;
+  }
+
+  .panel-principal,
+  .info-card,
+  .chart-card,
+  .table-card,
+  .formulario-card,
+  .consulta-card {
+    padding: 14px !important;
+  }
+
+  .tabs-custom,
+  .btn-group-custom,
+  .login .btn-group,
+  .formulario .btn-group {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  .tabs-custom .nav-link,
+  .menu-btn,
+  .accion-btn,
+  .pdf-btn {
+    width: 100% !important;
+    min-height: 44px;
+    padding: 11px 12px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .accion-btn,
+  .pdf-btn {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pdf-container {
+    justify-content: stretch !important;
+  }
+
+  .message {
+    font-size: 1rem !important;
+    margin-top: 16px !important;
+  }
+
+  canvas {
+    height: 260px !important;
+  }
+
+  /* Tablas como tarjetas en celular */
+  .table-card {
+    overflow: hidden;
+  }
+
+  .table-container {
+    max-height: none !important;
+    overflow-x: visible;
+  }
+
+  .tabla-estilizada {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+
+  .tabla-estilizada thead {
+    display: none !important;
+  }
+
+  .tabla-estilizada,
+  .tabla-estilizada tbody,
+  .tabla-estilizada tr,
+  .tabla-estilizada td {
+    display: block;
+    width: 100%;
+  }
+
+  .tabla-estilizada tr {
+    margin-bottom: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .tabla-estilizada td {
+    display: grid;
+    grid-template-columns: 44% 56%;
+    gap: 10px;
+    padding: 10px 12px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+    text-align: right;
+    word-break: break-word;
+  }
+
+  .tabla-estilizada td:first-child {
+    border-top: none !important;
+  }
+
+  .tabla-estilizada td::before {
+    font-weight: 700;
+    text-align: left;
+    color: #444;
+  }
+
+  #tabla-depositos td:nth-child(1)::before {
+    content: "Fecha";
+  }
+
+  #tabla-depositos td:nth-child(2)::before {
+    content: "Cantidad";
+  }
+
+  #tabla-depositos td:nth-child(3)::before {
+    content: "Cuenta Destino";
+  }
+
+  #tabla-depositos td:nth-child(4)::before {
+    content: "Descripción";
+  }
+
+  #tabla-retiros td:nth-child(1)::before {
+    content: "Fecha";
+  }
+
+  #tabla-retiros td:nth-child(2)::before {
+    content: "Monto";
+  }
+
+  #tabla-retiros td:nth-child(3)::before {
+    content: "Motivo";
+  }
+
+  #tabla-pagos td:nth-child(1)::before {
+    content: "Fecha";
+  }
+
+  #tabla-pagos td:nth-child(2)::before {
+    content: "Servicio";
+  }
+
+  #tabla-pagos td:nth-child(3)::before {
+    content: "Monto";
+  }
+
+  #tabla-pagos td:nth-child(4)::before {
+    content: "Número de Cuenta";
+  }
+
+  #tabla-informe td:nth-child(1)::before {
+    content: "Fecha";
+  }
+
+  #tabla-informe td:nth-child(2)::before {
+    content: "Tipo";
+  }
+
+  #tabla-informe td:nth-child(3)::before {
+    content: "Monto";
+  }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 380px) {
+  .caja,
+  .login {
+    padding: 12px !important;
+  }
+
+  .tabla-estilizada td {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   División visual entre botones de vista y navegación
+   ========================================================= */
+
+.menu-section {
+  width: 100%;
+}
+
+.menu-label {
+  margin: 0 0 10px;
+  padding: 0 4px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(47, 47, 47, 0.72);
+}
+
+.menu-divider {
+  width: 100%;
+  height: 1px;
+  margin: 18px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(47, 47, 47, 0.28),
+    transparent
+  );
+}
+
+.navigation-buttons {
+  padding-top: 4px;
+}
+
+.tabs-custom .nav-link,
+.menu-btn {
+  position: relative;
+}
+
+.tabs-custom .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 7px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: rgba(47, 47, 47, 0.28);
+}
+
+.transacciones-btn {
+  background-color: var(--beige) !important;
+}
+
+.historial-btn {
+  background-color: var(--azul) !important;
+}
+
+.analisis-btn {
+  background-color: var(--celeste) !important;
+}
+
+.grafica-btn {
+  background-color: var(--verde) !important;
+}
+
+.cerrar-btn {
+  background-color: var(--durazno) !important;
+}
+
+/* Responsive para la nueva división */
+@media (max-width: 992px) {
+  .menu-section {
+    width: 100%;
+  }
+
+  .menu-label {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .menu-divider {
+    margin: 20px 0;
+  }
+
+  .navigation-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-label {
+    font-size: 0.72rem;
+  }
+
+  .menu-divider {
+    margin: 16px 0;
+  }
+
+  .navigation-buttons {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   MEJORA VISUAL: navbar arriba del header
+   Pegar al final de responsive.css
+   ========================================================= */
+
+/* Caja principal más ordenada verticalmente */
+.caja {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar superior */
+.top-navbar {
+  width: 100%;
+  margin: 0 0 22px 0;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+/* Si quieres un diseño más limpio, ocultamos el título "NAVEGACIÓN" */
+.top-navbar-title {
+  display: none;
+}
+
+/* Contenedor de botones del navbar */
+.top-navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Botones del navbar */
+.navbar-btn {
+  position: relative;
+  min-width: 155px;
+  min-height: 46px;
+  padding: 12px 18px !important;
+  border-radius: 14px !important;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700 !important;
+  font-size: 15px;
+  line-height: 1.2;
+  color: var(--texto) !important;
+  border: 2px solid rgba(255, 255, 255, 0.55) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.navbar-btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: var(--texto) !important;
+  filter: brightness(0.98);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Página activa */
+.navbar-btn.active-page {
+  transform: scale(1.03);
+  border-color: rgba(47, 47, 47, 0.22) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.navbar-btn.active-page::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 7px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: rgba(47, 47, 47, 0.3);
+}
+
+/* Colores del navbar */
+.nav-transacciones {
+  background-color: var(--beige) !important;
+}
+
+.nav-historial {
+  background-color: var(--azul) !important;
+}
+
+.nav-analisis {
+  background-color: var(--celeste) !important;
+}
+
+.nav-grafica {
+  background-color: var(--verde) !important;
+}
+
+.nav-cerrar {
+  background-color: var(--durazno) !important;
+}
+
+/* Header más limpio debajo del navbar */
+.header {
+  text-align: center;
+  margin-bottom: 24px !important;
+}
+
+.header img {
+  width: clamp(190px, 28vw, 320px) !important;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  margin-bottom: 6px;
+}
+
+.header p {
+  margin-bottom: 0;
+}
+
+/* Mejor separación entre menú lateral y contenido */
+.menu {
+  margin-top: 4px;
+}
+
+/* Botones internos de la página: mismo estilo visual */
+.tabs-custom .nav-link {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.55) !important;
+  font-weight: 700;
+}
+
+.tabs-custom .nav-link.active {
+  color: var(--texto) !important;
+  border-color: rgba(47, 47, 47, 0.2) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16) !important;
+  transform: scale(1.03) !important;
+}
+
+.tabs-custom .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 7px;
+  height: 3px;
+  border-radius: 999px;
+  background-color: rgba(47, 47, 47, 0.3);
+}
+
+/* Mantener los colores pastel también cuando están activos */
+.tabs-custom .nav-link.semanal-btn,
+.tabs-custom .nav-link.semanal-btn.active {
+  background-color: var(--azul) !important;
+}
+
+.tabs-custom .nav-link.mensual-btn,
+.tabs-custom .nav-link.mensual-btn.active {
+  background-color: var(--celeste) !important;
+}
+
+.tabs-custom .nav-link.anual-btn,
+.tabs-custom .nav-link.anual-btn.active {
+  background-color: var(--verde) !important;
+}
+
+.tabs-custom .nav-link.pagos-btn,
+.tabs-custom .nav-link.pagos-btn.active,
+.tabs-custom .nav-link.informe-btn,
+.tabs-custom .nav-link.informe-btn.active {
+  background-color: var(--durazno) !important;
+}
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .top-navbar {
+    padding: 12px;
+    margin-bottom: 18px;
+  }
+
+  .top-navbar-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .navbar-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .header {
+    margin-bottom: 18px !important;
+  }
+}
+
+/* Responsive móvil */
+@media (max-width: 576px) {
+  .top-navbar {
+    border-radius: 16px;
+    padding: 10px;
+    margin-bottom: 16px;
+  }
+
+  .top-navbar-links {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-btn {
+    min-height: 44px;
+    padding: 11px 12px !important;
+    font-size: 0.95rem;
+  }
+
+  .header img {
+    width: clamp(170px, 68vw, 240px) !important;
+  }
+
+  .header {
+    margin-bottom: 16px !important;
+  }
+}
+
+/* Reserva siempre el espacio del scroll vertical */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.container,
+.pagina-wrapper,
+.Whole {
+  align-items: flex-start !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  height: auto !important;
+}
+
+.caja,
+.login {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.menu,
+.content,
+.panel-principal,
+.formulario-card,
+.consulta-card,
+.chart-card,
+.table-card {
+  max-width: 100%;
+}
+
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+input,
+select,
+textarea,
+button,
+.btn,
+.nav-link,
+td,
+th {
+  max-width: 100%;
+  word-break: break-word;
+}
