@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon Bank - Login</title>
     <!--Bootstrap css-->
     <link
@@ -19,14 +19,14 @@
     ></script>
     <!--Estilos Internos-->
     <link rel="stylesheet" href="./css/login.css" />
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/responsive.css" />
     <!--Iconos-->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-</head>
-<body>
+  </head>
+  <body>
     <!--Cuadro para formulario de Ingreso-->
     <div class="Whole">
       <div class="login">
@@ -40,33 +40,41 @@
             <h2>Iniciar Sesión</h2>
           </div>
           <!--Ingreso de Usuario y Contraseña-->
-          
-            <div class="input-box" id="usuario-box">
-              <input
-                type="text"
-                id="usuarioInput"
-                placeholder="Usuario"
-                autocomplete="off"
-              />
-            </div>
-            <div class="input-box" id="password-box">
-              <input
-                type="password"
-                id="passwordInput"
-                placeholder="Contraseña"
-                autocomplete="off"
-              />
-            </div>
+
+          <div class="input-box" id="usuario-box">
+            <input
+              type="text"
+              id="usuarioInput"
+              placeholder="Usuario"
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-box" id="password-box">
+            <input
+              type="password"
+              id="passwordInput"
+              placeholder="Contraseña"
+              autocomplete="off"
+            />
+          </div>
           <p id="errorMessage" style="color: red"></p>
           <p id="errorMessageUsuario" style="color: red"></p>
           <!--Botones para ingresar y registrar-->
           <div class="btn-group">
-              <a href="transacciones.html" class="btn btn-inicio" id="loginButton">Iniciar Sesión</a>
+            <a href="transacciones.html" class="btn btn-inicio" id="loginButton"
+              >Iniciar Sesión</a
+            >
 
-               <a href="usuarios.html" class="btn btn-inicio" id="loginButton">Registrarse</a>
+            <a href="usuarios.html" class="btn btn-inicio" id="loginButton"
+              >Registrarse</a
+            >
           </div>
         </form>
       </div>
     </div>
-</body>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/bank-core.js"></script>
+    <script src="./js/login.js"></script>
+  </body>
 </html>
